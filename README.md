@@ -44,6 +44,15 @@ scénario:
           code_postal_CDT
           ville_CDT
           
+          
+  aprés tous ca le CDT peut voir les offres 
+  pour le ENT peut voir les cvs et peut les évaluation . aussi il peut faire des annances de recrutement 
+  le CDT peut voir les ENT qui l'ont vu leur cv  
+  
+  
+  
+  
+          
       
   
         
@@ -65,28 +74,4 @@ scénario:
 
 
 
-site web qui genére des cv:
 
-crete cv 
-
-choisr le theme 
-
-entrer les infos 
-
-exporter le cv 
-
-mode paymment 
-
-inscription 
-
-sign in 
-
-paiment 
-
-modification soit cv soit profil
-
-recommandation des clients
-
-plateforme des cv recherches
-
-evaluation des cv
