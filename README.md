@@ -1,6 +1,6 @@
 # CvBashT5dm
 
-plateforme ou il y'a 2 acteurs principales ( qui cherche du travail AKA CDT  et l'entreprise AKA ENT )
+plateforme ou il y'a 3 acteurs principales ( qui cherche du travail AKA CDT  et l'entreprise AKA ENT et admin )
 scénario:
   
   s'inscrire :
@@ -48,6 +48,7 @@ scénario:
   aprés tous ca le CDT peut voir les offres 
   pour le ENT peut voir les cvs et peut les évaluation . aussi il peut faire des annances de recrutement 
   le CDT peut voir les ENT qui l'ont vu leur cv  
+  admin gére  ENT & CDT 
   
   
   
