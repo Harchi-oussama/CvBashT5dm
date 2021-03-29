@@ -1,0 +1,17 @@
+
+<style>
+    .example_wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+
+{{ form_start(form) }}
+<div class="container">
+    {{ form_row(form.nom_cdt, {'label':'Nom d\'utilisateur' , 'attr': {'placeholder': 'Saisir le nom ...'}}) }}
+    {{ form_row(form.prenom_cdt, {'label':'Prénom d\'utilisateur' , 'attr': {'placeholder': 'Saisir le prénom ...'}}) }}
+    {{ form_row(form.email_cdt, {'label':'Email d\'utilisateur' , 'attr': {'placeholder': 'Saisir email ...'}}) }}
+    {{ form_row(form.num_cdt, {'label':'Numéro d\'utilisateur' , 'attr': {'placeholder': 'Saisir le Numéro...'}}) }}
+    {{ form_row(form.password_cdt, {'label':'Password d\'utilisateur' , 'attr': {'placeholder': 'Saisir le mot de pass ...'}}) }}
+    {{ form_row(form.confirmez_password_cdt, {'label':'Comfirmation password' , 'attr': {'placeholder': 'resaisis ton mot de pass...'}}) }}
+    <br>
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

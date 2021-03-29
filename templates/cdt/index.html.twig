@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CDT index{% endblock %}
+
+{% block body %}
+    <h1>CDT index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_cdt</th>
+                <th>Prenom_cdt</th>
+                <th>Email_cdt</th>
+                <th>Num_cdt</th>
+                <th>Password_cdt</th>
+                <th>Confirmez_password_cdt</th>
+                <th>Evaluation_cdt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for c_d_t in c_d_ts %}
+            <tr>
+                <td>{{ c_d_t.id }}</td>
+                <td>{{ c_d_t.nomCdt }}</td>
+                <td>{{ c_d_t.prenomCdt }}</td>
+                <td>{{ c_d_t.emailCdt }}</td>
+                <td>{{ c_d_t.numCdt }}</td>
+                <td>{{ c_d_t.passwordCdt }}</td>
+                <td>{{ c_d_t.confirmezPasswordCdt }}</td>
+                <td>{{ c_d_t.evaluationCdt }}</td>
+                <td>
+                    <a href="{{ path('c_d_t_show', {'id': c_d_t.id}) }}">show</a>
+                    <a href="{{ path('c_d_t_edit', {'id': c_d_t.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('c_d_t_new') }}">Create new</a>
+{% endblock %}
