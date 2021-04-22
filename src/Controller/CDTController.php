@@ -21,7 +21,7 @@ class CDTController extends AbstractController
      */
     public function index(CDTRepository $cDTRepository): Response
     {
-        return $this->render('cdt/index.html.twig', [
+        return $this->render('home.html.twig', [
             'c_d_ts' => $cDTRepository->findAll(),
         ]);
     }
@@ -32,7 +32,14 @@ class CDTController extends AbstractController
      */
     public function inscriptionChoix(): Response
     {
-        return $this->render('cdt/inscriptionChoix.html.twig');
+        return $this->render('inscriptionChoix.html.twig');
+    }
+    /**
+     * @Route("/loginChoix")
+     */
+    public function LoginChoix(): Response
+    {
+        return $this->render('loginChoix.html.twig');
     }
 
     /**
@@ -61,7 +68,7 @@ class CDTController extends AbstractController
     }
     
     /**
-     * @Route("/login", name="app_login")
+     * @Route("/login", name="app_login_cdt")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -74,17 +81,16 @@ class CDTController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('security/loginCdt.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     /**
-     * @Route("/logout", name="app_logout")
+     * @Route("/logout", name="app_logout_cdt")
      */
     public function logout()
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
-
     /**
      * @Route("/{id}", name="c_d_t_show", methods={"GET"})
      */

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Ent{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Edit Ent</h1>
+
+    {{ include('ent/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('ent_index') }}">back to list</a>
+
+    {{ include('ent/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

@@ -2,32 +2,41 @@ security:
     encoders:
         App\Entity\CDT:
             algorithm : bcrypt
+        
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         users_in_memory: { memory: null }
+        in_ent:
+            entity:
+                class: App\Entity\Ent
+                property: mail_ent 
         in_database:
             entity:
                 class: App\Entity\CDT
-                property: email_cdt 
-                          
+                property: email_cdt                   
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
-            anonymous: true
+        
+        cdt:
             provider: in_database
-
-            form_login:
-                login_path: cdt_login
-                check_path: cdt_login
-            
-            logout:
-                path: /logout
-                target: /login
-            guard:
+            anonymous: true           
+            guard:                
                 authenticators:
                     - App\Security\LoginFormAuthAuthenticator
+            logout:
+                path: /logout
+                target: /login  
+        main:
+            provider: in_ent
+            anonymous: true           
+            guard:                
+                authenticators:
+                    - App\Security\LoginEntFormAuthenticator
+            logout:
+                path: /ent/logout
+                target: /ent/login  
                 # where to redirect after logout
                 # target: app_any_route
 

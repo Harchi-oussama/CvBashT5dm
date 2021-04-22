@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CDT{% endblock %}
+{% block title %}Vos informations{% endblock %}
+
 
 {% block body %}
-    <h1>CDT</h1>
+<div class="container" style="center">
+<br><br><br>
+    <h1 style="center">Vos informations</h1>
+    <br><br><br>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ c_d_t.id }}</td>
-            </tr>
+
             <tr>
                 <th>Nom_cdt</th>
                 <td>{{ c_d_t.nomCdt }}</td>
@@ -31,20 +32,14 @@
                 <th>Password_cdt</th>
                 <td>{{ c_d_t.passwordCdt }}</td>
             </tr>
-            <tr>
-                <th>Confirmez_password_cdt</th>
-                <td>{{ c_d_t.confirmezPasswordCdt }}</td>
-            </tr>
-            <tr>
-                <th>Evaluation_cdt</th>
-                <td>{{ c_d_t.evaluationCdt }}</td>
-            </tr>
+
         </tbody>
     </table>
 
-    <a href="{{ path('c_d_t_index') }}">back to list</a>
+    <br><br>
 
-    <a href="{{ path('c_d_t_edit', {'id': c_d_t.id}) }}">edit</a>
+    <a href="{{ path('c_d_t_edit', {'id': c_d_t.id}) }}"><button type="button" class="btn btn-dark">edit</button></a>
 
-    {{ include('cdt/_delete_form.html.twig') }}
+    
+</div>
 {% endblock %}
