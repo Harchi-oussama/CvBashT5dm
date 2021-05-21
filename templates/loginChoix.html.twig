@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+<div class="container" style="center">
 	<h1>Choisissez votre type login</h1>
 	<form class="container-fluid justify-content-start">
 		<a href="/login">
 			<button class="btn btn-outline-success me-2" type="button">CDT</button>
 		</a>
-		<a href="ent/login">
+		<a href="entreprise/login">
 			<button class="btn btn-outline-success me-2" type="button">ENT</button>
 		</a>
 	</form>
+</div>
 {% endblock %}

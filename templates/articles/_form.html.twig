@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+<div class="container">
+
+    {{ form_row(form.object, {'label':'Métier' , 'attr': {'placeholder': 'Saisir le nom ...'}, }) }}
+    {{ form_row(form.description, {'label':'Description' , 'attr': {'placeholder': 'Saisir le prénom ...'}}) }}
+    {{ form_row(form.entreprise, {'label':'Entreprise' , 'attr': {'placeholder': 'Saisir email ...'}}) }}
+
+    <br>
+    <button  class="btn btn-primary">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}
+
+
+

@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}offres{% endblock %}
+
+{% block body %}
+
+<div class="container" style="center">
+
+    <h1>offres</h1>
+    <div class="container">
+    {{ form_start(form) }}
+    <div class="form-row align-items-end" >
+    <div class="col">
+    <br>
+    {{ form_row(form.nom,{'label':'Catégorie' , 'attr': {'placeholder': 'choisi ta catégorie...'}}) }}
+    <br>
+    </div>
+    <div class="col">
+    <div class="form-group">
+    <button type="submit" class="btn btn-success">Rechercher</button>
+    </div>
+    </div>
+    </div>
+    {{ form_end(form) }}  
+    <br><br>
+    {{ form_start(forma) }}
+     <br>
+    <div class="form-row align-items-end" >
+    <div class="col">
+    {{ form_row(forma.categorie,{'label':'Entreprise' , 'attr': {'placeholder': 'taper le nom de l\'entreprise...'}}) }}
+     <br>
+    </div>
+    <div class="col">
+    <div class="form-group">
+    <button type="submit" class="btn btn-success">Rechercher</button>
+    </div>
+    </div>
+    </div>
+    {{ form_end(forma) }}
+    <br><br>    
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Object</th>
+                <th>Description</th>
+                <th>Entreprise</th>
+                <th>DateCreation</th>
+                <th>Postuler</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+
+                <td>{{ article.object }}</td>
+                <td>{{ article.description }}</td>
+                <td>{{ article.entreprise }}</td>
+                <td>{{ article.dateCreation ? article.dateCreation|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('articles_show', {'id': article.id}) }}">Postuler</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}
+

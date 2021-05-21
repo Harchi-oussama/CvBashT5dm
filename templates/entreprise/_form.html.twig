@@ -1,0 +1,19 @@
+<style>
+    .example_wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+{{ form_start(form) }}
+<div class="container">
+    {{ form_row(form.nom, {'label':'Nom de l\'entrprise' , 'attr': {'placeholder': 'Saisir le nom de l\'entreprise...'}}) }}
+    {{ form_row(form.mail, {'label':'Email de l\'entrprise' , 'attr': {'placeholder': 'Saisir l\'email de l\'entreprise...'}}) }}
+    {{ form_row(form.site, {'label':'Site l\'entrprise' , 'attr': {'placeholder': 'Saisir le site de l\'entreprise...'}}) }}
+    {{ form_row(form.adresse, {'label':'Localisation l\'entrprise' , 'attr': {'placeholder': 'Saisir l\'adresse de l\'entreprise ...'}}) }}
+    {{ form_row(form.num, {'label':'Numéro de l\'entrprise' , 'attr': {'placeholder': 'Saisir le Numéro de l\'entreprise...'}}) }}
+    {{ form_row(form.ville, {'label':'Ville' , 'attr': {'placeholder': 'choisis la ville ...'}}) }} 
+    {{ form_row(form.img_logo, {'label':'Logo l\'entrprise' , 'attr': {'placeholder': 'entrer le logo de l\'entreprise...'}}) }}
+    {{ form_row(form.description, {'label':'Description à propos de l\'entrprise' , 'attr': {'placeholder': 'Saisir une déscription sur l\'entreprise ...'}}) }} 
+    {{ form_row(form.date_creation, {'label':'Date de création de  l\'entrprise' , 'attr': {'placeholder': 'Saisir la Date de création...'}}) }}
+    {{ form_row(form.password, {'label':'Password ' , 'attr': {'placeholder': 'Saisir le mot de pass ...'}}) }}
+    {{ form_row(form.confirmation_password, {'label':'Confirmation Password ' , 'attr': {'placeholder': 'Retaper le mot de pass ...'}}) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

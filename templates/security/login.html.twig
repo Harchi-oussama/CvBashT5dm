@@ -3,7 +3,8 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<div class="container">
+<br><br>
+<div class="container center">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -16,8 +17,8 @@
     {% endif %}
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputMail_ent">Mail_ent</label>
-    <input type="text" value="{{ last_username }}" name="mail_ent" id="inputMail_ent" class="form-control" required autofocus>
+    <label for="inputMail">Mail</label>
+    <input type="text" value="{{ last_username }}" name="mail" id="inputMail" class="form-control" required autofocus>
     <label for="inputPassword">Password</label>
     <input type="password" name="password" id="inputPassword" class="form-control" required>
 
