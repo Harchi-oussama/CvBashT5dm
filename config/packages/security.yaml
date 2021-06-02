@@ -20,6 +20,17 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false   
+        main:
+            pattern: ^/entreprise/login
+            provider: in_ent
+            anonymous: true           
+            guard:                
+                authenticators:                    
+                    - App\Security\LoginEntrepriseFormAuthenticator
+                
+            logout:
+                path: /entreprise/logout
+                target: /entreprise/login  
         cdt:
             provider: in_database
             anonymous: true           
@@ -29,16 +40,7 @@ security:
             logout:
                 path: /logout
                 target: /login  
-        main:
-            provider: in_ent
-            anonymous: true           
-            guard:                
-                authenticators:                    
-                    - App\Security\LoginEntrepriseFormAuthenticator
-                
-            logout:
-                path: /entreprise/logout
-                target: /entreprise/login                   
+                 
                 # where to redirect after logout
                 # target: app_any_route
 

@@ -58,7 +58,7 @@ class CDTController extends AbstractController
             $entityManager->persist($cDT);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login_cdt');
         }
 
         return $this->render('cdt/new.html.twig', [

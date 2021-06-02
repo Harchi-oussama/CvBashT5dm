@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Vos informations{% endblock %}
 
 
@@ -9,7 +10,7 @@
     <h1 style="center">Vos informations</h1>
     <br><br><br>
 
-    <table class="table">
+    <table class="table table-primary">
         <tbody>
 
             <tr>
@@ -34,7 +35,7 @@
 
     <br><br>
 
-    <a href="{{ path('c_d_t_edit', {'id': c_d_t.id}) }}"><button type="button" class="btn btn-dark">edit</button></a>
+    <a href="{{ path('c_d_t_edit', {'id': c_d_t.id}) }}"><button type="button" class="btn btn-dark btn-lg">edit</button></a>
 
     
 </div>

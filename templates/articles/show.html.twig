@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Articles{% endblock %}
+
+{% block title %}Postuler{% endblock %}
 
 {% block body %}
-    <h1>Articles</h1>
-    <table class="table">
+<div class="container" style="center">
+<br><br>
+    <h1>Postuler</h1>
+    <br><br><br><br>
+    <table class="table table-success">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -28,10 +32,17 @@
             </tr>
         </tbody>
     </table>
+    <a href="{{ path('articles_index') }}"><button type="button" class="btn btn-success">back to list</button></a>
+    <br><br><br>
+      
+<div class="container btn-success" style="center">
+{{ form_start(formPostuler) }}
+    {{ form_row(formPostuler.entreprise, {'label':'Entreprise' , 'value': article.entreprise  }) }}
+    {{ form_row(formPostuler.emeteur, {'label':'ton email' , 'attr': {'placeholder': 'taper ton email ...'}}) }}
+    {{ form_row(formPostuler.name,) }}
+{{ form_end(formPostuler) }}
+</div>
+<br><br><br>
+</div>
 
-    <a href="{{ path('articles_index') }}">back to list</a>
-
-    <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
-
-    {{ include('articles/_delete_form.html.twig') }}
 {% endblock %}

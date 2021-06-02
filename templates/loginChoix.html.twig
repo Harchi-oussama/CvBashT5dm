@@ -1,14 +1,22 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<div class="container" style="center">
-	<h1>Choisissez votre type login</h1>
-	<form class="container-fluid justify-content-start">
+<br><br>
+<div class="container center p-4 p-md-3 mb-3 text-white rounded btn-dark"   style="height: 400px ; width: 50%" >
+	<h1 class="center" style="center">Choisissez votre type login</h1>
+	<br>
+	<form class="container center mb-3 ">
+
 		<a href="/login">
-			<button class="btn btn-outline-success me-2" type="button">CDT</button>
+			<button type="button" class="btn btn-success btn-lg">Chercheur du travail</button>
 		</a>
+		<br><br>
 		<a href="entreprise/login">
-			<button class="btn btn-outline-success me-2" type="button">ENT</button>
+			<button type="button" class="btn btn-success btn-lg">Entreprise           </button>
 		</a>
+
 	</form>
 </div>
 {% endblock %}
+
+
+
